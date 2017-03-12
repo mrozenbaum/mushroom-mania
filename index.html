@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shroom App</title>
+  <link rel="stylesheet" type="text/css" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="ShroomApp">
+  <h1>Shrooms</h1>
+    <div ng-controller="ShroomCtrl">
+        <form>
+            <div class="form-group">
+              <label for="textInput">Filter By Description</label>
+              <div class="radio">
+                <input type="text" name="textInput" class="form-control" ng-model="searchText"><br>
+                <label>
+                <input type="radio" name="mushroom" value="false" ng-model="edible">Poisonous</label>
+                <label><input type="radio" name="mushroom" value="true" ng-model="edible">Non-Poisonous</label>
+              </div>
+            </div>
+        </form>
+    <div ng-view></div>
+</div>
+
+<!-- Jquery script tag -->
+<script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap script tag -->
+<script type="text/javascript" src="/lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Angular script tags -->
+<script type="text/javascript" src="/lib/node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/node_modules/angular-route/angular-route.min.js"></script>
+<!-- firebase script needs to be on top of app.js -->
+<script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
+<!-- app.js always needs to be on top of all script tags -->
+<script type="text/javascript" src="app/app.js"></script>
+<!-- this holds your api key etc -->
+<script type="text/javascript" src="app/values/fb-creds.js"></script>
+<!-- Controllers JS -->
+<script type="text/javascript" src="app/controllers/ShroomCtrl.js"></script>
+
+  
+</body>
+</html>
